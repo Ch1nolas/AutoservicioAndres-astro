@@ -6,6 +6,7 @@ interface Props {
 const { title } = Astro.props;
 
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -23,35 +24,43 @@ import Header from "../components/Header.astro";
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
+  <style is:global>
+    @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Spartan", sans-serif;
+    }
+
+    body {
+      width: 100%;
+      h1 {
+        font-size: 38px;
+        text-align: center;
+      }
+      h2 {
+        font-size: 28px;
+        padding-top: 15px;
+        text-align: center;
+      }
+      h3 {
+        font-size: 18px;
+        text-align: center;
+      }
+      p {
+        font-size: 16px;
+        margin: 15px 0 20px 0;
+      }
+      .section-p1 {
+        padding: 40px 80px;
+      }
+      .section-m1 {
+        margin: 40px 0;
+      }
+    }
+  </style>
 </html>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
-    color-scheme: dark light;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>
