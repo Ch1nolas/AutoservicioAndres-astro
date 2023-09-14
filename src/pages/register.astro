@@ -6,25 +6,34 @@ import Layout from "../layouts/Layout.astro";
   <main>
     <div>
       <form action="">
-        <input type="text" name="nombre" id="" placeholder="Nombre" />
+        <label for="nombre">Nombre</label>
+        <input
+          type="text"
+          name="nombre"
+          id="nombre"
+          placeholder="Nombre"
+          required
+        />
+        <br />
+        <label for="apellido">Apellido</label>
         <input
           type="text"
           name="apellido"
-          id=""
+          id="apellido"
           placeholder="Ingrese su apellido"
         />
+        <br />
+        <label for="numero">Número de teléfono</label>
         <input
           type="number"
           name="numero"
-          id=""
+          id="numero"
           placeholder="Ingrese su numero de telefono"
         />
-        <input
-          type="email"
-          name="mail"
-          id=""
-          placeholder="Ingrese su correo electronico"
-        />
+        <br />
+        <label for="mail">Correo</label>
+        <br />
+        <a href="/"> <input type="button" value="Enviar" /></a>
       </form>
     </div>
   </main>
